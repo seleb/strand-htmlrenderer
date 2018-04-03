@@ -1,0 +1,15 @@
+::start
+some text with a [[shorthand link]] and a longform [[action|this.goto("other passage")]]
+
+::shorthand link
+<<set linkClicked=true>>this passage appears when you click the link
+[[back|this.back()]]
+
+::other passage
+this.linkClicked = <<print this.linkClicked>>
+<<if this.linkClicked>>
+this text shows up if you visited the shorthand link passage before getting here
+<<else>>
+this text shows up if you didn't
+<<endif>>
+[[back|this.back()]]
