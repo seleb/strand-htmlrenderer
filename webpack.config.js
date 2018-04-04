@@ -6,7 +6,7 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.txt$/,
+				test: /\.strand$/,
 				use: "raw-loader"
 			}
 		]
