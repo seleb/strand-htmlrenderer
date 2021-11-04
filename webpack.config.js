@@ -1,17 +1,23 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { resolve } = require('path');
 const pkg = require('./package.json');
 
 module.exports = {
-	mode: "production",
+	mode: 'production',
+	output: {
+		path: resolve(__dirname, 'docs'),
+	},
 	module: {
 		rules: [
 			{
 				test: /\.strand$/,
-				use: "raw-loader"
-			}
-		]
+				use: 'raw-loader',
+			},
+		],
 	},
-	plugins: [new HtmlWebpackPlugin({
-		title: pkg.name
-	})]
+	plugins: [
+		new HtmlWebpackPlugin({
+			title: pkg.name,
+		}),
+	],
 };
