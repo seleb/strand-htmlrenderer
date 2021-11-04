@@ -1,6 +1,6 @@
 // basic html-renderer
 
-import Strand from "strand";
+import Strand from "strand-core";
 
 export default class {
 	constructor(source) {
