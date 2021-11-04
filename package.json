@@ -18,6 +18,6 @@
 		"webpack-dev-server": "^3.1.1"
 	},
 	"dependencies": {
-		"strand": "seleb/strand#master"
+		"strand": "seleb/strand#main"
 	}
 }
