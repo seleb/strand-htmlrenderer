@@ -17,16 +17,15 @@ export default class {
 	}
 
 	displayPassage(passage) {
+		// clear the old page
 		document.body.innerHTML = "";
-
-		const input = document.createElement("section");
-		const code = document.createElement("pre");
-		code.innerText = passage.body;
-		input.appendChild(code);
 
 		const output = document.createElement("section");
 
+		// execute the passage
 		const program = this.strand.execute(passage.program);
+
+		// parse the returned program into plain text and interactive action elements
 		for (let node of program) {
 			switch (node.name) {
 				case "text":
@@ -51,7 +50,12 @@ export default class {
 		}
 
 		document.body.appendChild(output);
-		document.body.appendChild(document.createElement("br"));
+
+		// also include the passage source for demo purposes
+		const input = document.createElement("section");
+		const code = document.createElement("pre");
+		code.innerText = passage.body;
+		input.appendChild(code);
 		document.body.appendChild(input);
 
 		return Promise.resolve();
