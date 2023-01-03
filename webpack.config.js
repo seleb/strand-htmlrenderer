@@ -11,7 +11,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.strand$/,
-				use: 'raw-loader',
+				type: 'asset/source',
 			},
 		],
 	},
