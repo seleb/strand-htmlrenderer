@@ -3,7 +3,6 @@ const { resolve } = require('path');
 const pkg = require('./package.json');
 
 module.exports = {
-	mode: 'production',
 	output: {
 		path: resolve(__dirname, 'docs'),
 	},
