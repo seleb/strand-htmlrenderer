@@ -1,5 +1,5 @@
 ::start
-some text with a [[shorthand link]] and a longform [[action|this.goto("other passage")]]
+some text with a [[shorthand link]], a [[redirected shorthand link>shorthand link]], and a longform [[action|this.goto("other passage")]]
 
 ::shorthand link
 <<set linkClicked=true>>this passage appears when you click the link
@@ -10,6 +10,11 @@ this.linkClicked = <<print this.linkClicked>>
 <<if this.linkClicked>>
 this text shows up if you visited the shorthand link passage before getting here
 <<else>>
-this text shows up if you didn't
+this text shows up if you didn't visit the shorthand link passage before getting here
 <<endif>>
+
 [[back|this.back()]]
+>continue
+all of these links also just continue
+>one|two|three
+[[back to start>start]]
